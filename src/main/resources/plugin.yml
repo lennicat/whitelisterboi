@@ -1,0 +1,4 @@
+name: Whitelist Boi
+version: '${project.version}'
+main: net.lenngi.whitelistboi.Whitelistboi
+api-version: 1.18
