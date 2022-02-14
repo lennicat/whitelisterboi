@@ -12,13 +12,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class Commands implements CommandExecutor {
+public class IGCommands implements CommandExecutor {
 
     private Object NullPointerException;
 
     private static Whitelistboi plugin;
 
-    public Commands(Whitelistboi instance) {
+    public IGCommands(Whitelistboi instance) {
 
         plugin = instance;
     }

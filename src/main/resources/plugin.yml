@@ -5,3 +5,5 @@ api-version: 1.18
 commands:
   wlb:
     description: This is the main command
+  wlbdiscord:
+    description: Various test commands.
