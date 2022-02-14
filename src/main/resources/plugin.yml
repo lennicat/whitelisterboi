@@ -1,4 +1,7 @@
-name: Whitelist Boi
+name: WhitelistBoi
 version: '${project.version}'
 main: net.lenngi.whitelistboi.Whitelistboi
 api-version: 1.18
+commands:
+  wlb:
+    description: This is the main command
