@@ -10,6 +10,7 @@ import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.utils.Compression;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import net.lenngi.whitelistboi.Whitelistboi;
+import org.bukkit.configuration.file.FileConfiguration;
 
 import javax.security.auth.login.LoginException;
 
@@ -23,16 +24,25 @@ public class DiscordBot {
     }
 
     public void startup() throws LoginException, InterruptedException{
-        jda = JDABuilder.createDefault("blep")
-                .enableCache(CacheFlag.EMOTE)
-                .disableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE)
-                .setContextEnabled(false)
-                .build()
-                .awaitReady();
+        final FileConfiguration config = plugin.getConfig();
+        final String token = config.getString("DiscordToken");
+
+        if (token == null) {
+            System.out.println("Please check config!");
+        } else {
+            jda = JDABuilder.createDefault(token)
+                    .enableCache(CacheFlag.EMOTE)
+                    .disableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE)
+                    .setContextEnabled(false)
+                    .build()
+                    .awaitReady();
+        }
+
     }
 
     public void sendMessage() {
-        TextChannel testing = jda.getTextChannelById("925416477304189028");
-        testing.sendMessage("beep");
+        System.out.print("sent");
+        TextChannel testing = jda.getTextChannelById("901623140550074411");
+        testing.sendMessage("beep").queue();
     }
 }

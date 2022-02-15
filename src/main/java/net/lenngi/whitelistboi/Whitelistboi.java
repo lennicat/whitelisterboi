@@ -18,6 +18,7 @@ public class Whitelistboi extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        this.saveDefaultConfig();
         // Plugin startup logic
         DiscordBot discordBot = new DiscordBot(this);
         logger.info(ChatColor.GREEN + "Enabled " + this.getName());
